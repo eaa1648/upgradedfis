@@ -42,32 +42,33 @@ public class CompanyService
         return company;
     }
 
-    public async Task AddCompanyAsync(CompanyDto companyDto)
+   public async Task AddCompanyAsync(CompanyDto companyDto)
+{
+    var company = new Company
     {
-        var company = new Company
-        {
-            Name = companyDto.Name,
-            Email = companyDto.Email,
-            Password = companyDto.Password
-        };
+        Name = companyDto.Name,
+        Email = companyDto.Email,
+        Password = companyDto.Password
+    };
 
-        _context.Companies.Add(company);
+    _context.Companies.Add(company);
+    await _context.SaveChangesAsync();
+}
+
+public async Task UpdateCompanyAsync(CompanyDto companyDto)
+{
+    var existingCompany = await _context.Companies.FindAsync(companyDto.Id);
+    if (existingCompany != null)
+    {
+        existingCompany.Name = companyDto.Name;
+        existingCompany.Email = companyDto.Email;
+        existingCompany.Password = companyDto.Password;
+
+        _context.Companies.Update(existingCompany);
         await _context.SaveChangesAsync();
     }
+}
 
-    public async Task UpdateCompanyAsync(CompanyDto companyDto)
-    {
-        var existingCompany = await _context.Companies.FindAsync(companyDto.Id);
-        if (existingCompany != null)
-        {
-            existingCompany.Name = companyDto.Name;
-            existingCompany.Email = companyDto.Email;
-            existingCompany.Password = companyDto.Password;
-
-            _context.Companies.Update(existingCompany);
-            await _context.SaveChangesAsync();
-        }
-    }
 
     public async Task DeleteCompanyAsync(long id)
     {
