@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("upgradedfis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f785bf560a8d048d813cbea5f987da3e2e91f5de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+304ce82e9388f1beaeeeaa2d715c58ea8ceb2923")]
 [assembly: System.Reflection.AssemblyProductAttribute("upgradedfis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("upgradedfis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
