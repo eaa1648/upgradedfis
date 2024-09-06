@@ -36,6 +36,17 @@ builder.Services.AddScoped<TaxService>();
 // MVC yapılandırması
 builder.Services.AddControllers();
 
+// CORS yapılandırması
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 // Swagger yapılandırması
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -58,6 +69,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// CORS kullanımını buradan yapıyoruz
+app.UseCors();
 
 app.UseAuthorization();
 

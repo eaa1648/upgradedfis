@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace upgradedfis.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240906110745_RemoveRelationships1")]
-    partial class RemoveRelationships1
+    [Migration("20240906114936_InitialCreate19")]
+    partial class InitialCreate19
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

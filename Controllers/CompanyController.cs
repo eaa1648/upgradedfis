@@ -21,7 +21,7 @@ public class CompanyController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<CompanyDto>> GetCompanyById(long id)
+    public async Task<ActionResult<Company>> GetCompanyById(long id)
     {
         var company = await _companyService.GetCompanyByIdAsync(id);
         if (company == null)

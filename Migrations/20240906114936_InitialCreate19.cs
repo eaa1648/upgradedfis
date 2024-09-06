@@ -5,7 +5,7 @@
 namespace upgradedfis.Migrations
 {
     /// <inheritdoc />
-    public partial class RemoveRelationships : Migration
+    public partial class InitialCreate19 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
